@@ -108,10 +108,11 @@ public class PlayerScript : MonoBehaviour
         Destroy(lasernew, 10f);
     }
     
-    //code for taking damages for enemy shots.
+    //Collison detection
+    //code responsible for taking damages.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //enemies are attached with damagescript, and cached here for easy use
+        //lasers(bullets) are attached with damagescript, and cached here for easy use
         damagescript damager = collision.gameObject.GetComponent<damagescript>();
         //if collided with other items do nothing, else
         if (!damager) { return; }
